@@ -3,13 +3,15 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import Counter from "./components/counter";
 import "./App.css";
+import ToDo from "./components/todo";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={reactLogo} className="App-logo" alt="logo" />
-        <Counter />
+        {/* <img src={reactLogo} className="App-logo" alt="logo" /> */}
+        {/* <Counter /> */}
+        <ToDo />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
