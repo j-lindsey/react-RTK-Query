@@ -1,8 +1,13 @@
 import React from "react";
-import { useFetchToDosQuery } from "../store/todoApi";
+import { useAddToDosMutation, useFetchToDosQuery } from "../store/todoApi";
 
 export default function ToDo() {
   const { data, error, isLoading } = useFetchToDosQuery();
+  const [addToDo, results] = useAddToDosMutation();
+
+  const handleAddToDo = () => {
+    addToDo({ id: 1, userId: 1, title: "hello", completed: true });
+  };
 
   let content;
   if (isLoading) {
@@ -18,7 +23,7 @@ export default function ToDo() {
   return (
     <div>
       <h1>To Dos:</h1>
-      <button>Add ToDo</button>
+      <button onClick={handleAddToDo}>Add ToDo</button>
       <ul>{content}</ul>
     </div>
   );
